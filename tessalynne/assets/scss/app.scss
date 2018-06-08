@@ -1,0 +1,435 @@
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Roboto+Condensed');
+
+$dark-purple: #2c0448;
+$purple: #440d6b;
+$light-purple: #5c2186;
+$grey: #181819;
+$yellow: #ffc000;
+
+//social colors
+$facebook: #3b5998;
+$linkedin: #0077b5;
+$email: #ffc000;
+
+$fjalla: 'Fjalla One', 'Roboto Condensed', Sans-serif;
+$roboto: 'Roboto Condensed', Sans-serif;
+
+body {
+	align-items: center;
+	background-image: url(../graphics/main-bg.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	font-family: 'Roboto Condensed', Sans-serif;
+	background-attachment: fixed;
+	
+	@include breakpoint(small only) {
+		background-size: cover;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Fjalla One', 'Roboto Condensed', Sans-serif;
+	}
+	
+	h1 {
+		font-size: 4em;
+	}
+	
+	
+	.yellow {
+		color: $yellow;
+	}
+	
+	.dark-purple {
+		color: $dark-purple;
+	}
+	
+	.purple {
+		color: $purple;
+	}
+	
+	.light-purple {
+		color: $light-purple;
+	}
+	
+	.grey {
+		color: $grey;
+	}
+}
+.section-card {
+	border-left: 10px solid !important;
+	border-color: $dark-purple;
+	background-color: #DDDCDC;
+	padding: 10px;
+	
+	h4 {
+		color: $purple; 
+		font-size: 1.45rem;
+		border-bottom: $light-purple dotted 1px;
+	}
+	
+	p.employment-dates {
+		margin-top: 0;
+		font-style:italic;
+	}
+	
+	p.employer {
+		margin-bottom: 0;
+	}
+	
+	ul.responsibilities {
+		li {
+			margin-bottom: 1.5em;
+		}
+	}
+}
+#mobile-nav-cont {
+	position: relative;
+	
+	#mobile-nav-menu {
+		display: none;
+		background-color: $dark-purple;
+		position: relative;
+		
+		@include breakpoint(medium only) {
+			width: 50%;
+			right: 0;
+			left: 50%;
+		}
+		
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			
+			li {
+				border-top: darken($dark-purple, 15%) solid 1px;
+				border-bottom: lighen($dark-purple, 15%) solid 1px;
+				
+				&:first-child {
+					border-top: 0;
+				}
+				
+				&:last-child {
+					border-bottom: 0;
+				}
+				
+				a {
+					font-family: $fjalla;
+					font-size: 1.5em;
+					text-align: center;
+					color: #FFF;
+					text-decoration: none;
+					display: block;
+					padding: .5em;
+					
+					&.active {
+						background-color: $light-purple;
+					}
+					
+					@include breakpoint(medium only) {
+						text-align: right;
+					}
+				}
+				
+			}
+		}
+	}
+	#mobile-nav-button {
+		width: 50px;
+		height: 50px;
+		background-color: $dark-purple;
+		color: #FFF;
+		font-size: 2em;
+		text-align: center;
+		float: right;
+	}
+}
+#masthead {
+	#logo h1 {
+		position: relative;
+		
+		span.logo-small {
+			position: absolute;
+			top: 4.25rem;
+			display: block;
+			font-size: 1.65rem;
+			text-transform: uppercase;
+		}
+		
+		@include breakpoint(small only) {
+			font-size: 3em;
+			
+			span.logo-small {
+				font-size: 1.24rem;
+				top: 3.25rem;
+			}
+		}
+	}
+	
+	#mainNav {
+		
+		ul {
+			list-style-type: none;
+			padding: 2em 0 0 0;
+			margin: 0;
+			
+			li {
+				display: inline-block;
+				margin-right: 4.75rem; 
+				&:last-child {
+					margin-right: 0;
+				}
+				
+				a {
+					display: block;
+					font-family: $fjalla;
+					color: #FFF;
+					text-align: center;
+					padding: 0rem .5rem;
+					font-size: 1.5rem;
+					transition: all 100ms ease;
+					box-shadow: 0 0 0 0 $grey;
+					
+					&:link, &:visited {
+						background: url(../graphics/main-nav-li-off.jpg) repeat;
+					}
+					
+					&:hover, &:active {
+						background: url(../graphics/main-nav-li-on.jpg) repeat;
+						transform: scale(1.2) !important;
+						box-shadow: 0 0 15px 0 $grey;
+					}
+					
+					&.active {
+						background: url(../graphics/main-nav-li-on.jpg) repeat;
+					}
+					
+					&.link-1 {
+						transform: rotate(-10deg);
+					}
+					&.link-2 {
+						transform: rotate(5deg);
+					}
+					&.link-3 {
+						transform: rotate(-7deg);
+					}
+					&.link-4 {
+						transform: rotate(10deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+main {
+	&[name='portfolio'] {
+		h2 {
+			color: $dark-purple;
+			font-size: 2em;
+			padding-top: 2em;
+		}
+		
+		p.features {
+			font-family: $fjalla;
+			color: $purple;
+		}
+                
+                a.read-more {
+                   display: block;
+                   max-width: 200px;
+                   padding: .15rem .5rem;
+                   color: #FFF;
+                   font-size: 1.25rem;
+                   font-family: $fjalla;
+                   text-align: center;
+                   margin: 2em auto 0 auto;
+                   background: url(../graphics/main-nav-li-off.jpg) repeat;
+                   transform: rotate(-5deg);
+                   transition: all 100ms ease;
+
+                    &:hover, &:active {
+                        background: url(../graphics/main-nav-li-on.jpg) repeat;
+                        transform: scale(1.2) rotate(0deg) !important;
+                        box-shadow: 0 0 15px 0 $grey; 
+                    }
+                   
+                   
+                }
+		
+		img.homepage-slider {
+			display: block;
+			position: relative;
+			top: 10rem;
+			margin: auto;
+			
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+			
+		
+	}
+	&[name='resume'] {
+		section {
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+		
+		
+		.software-skills {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			color: $light-purple; 
+			font-family: $fjalla;
+			li {
+				border-bottom: $light-purple dotted 1px;
+				padding: .5em; 
+			}
+		}
+		
+		section[name='about-me'] {
+			color:$dark-purple;
+			font-size: 1.2rem;
+			
+			h2 img {
+				display: block;
+				position: relative;
+			}
+			
+			#download-resume {
+				margin-top: 3em;
+				padding: 1em;
+				background-color: $dark-purple;
+				h3 {
+					font-size: 1.5em;
+					text-align: center;
+					color: #FFF;
+				}
+				
+				a {
+					z-index: 999;
+					display: block;
+					width: 75px;
+					height: 75px;
+					color: #FFF;
+					font-size: 2.8em;
+					text-align: center;
+					transform: rotate(-15deg);
+					background-color: #A40000;
+					transition: all 200ms ease;
+					margin: .5em auto;
+					
+					&:hover, &:active {
+						transform: rotate(15deg) scale(1.2);
+						box-shadow: 0 0 10px 0 #000;
+						background-color: $light-purple;
+					}
+				}
+			}
+		}
+	}
+}
+
+#footer {
+	background-image: url(../graphics/footer-bg.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:left bottom;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	
+	img#contact-me {
+		position: relative;
+		top: -50px;
+		margin: auto;
+	}
+	
+	img.profile-pic {
+		@include breakpoint(small only){
+			margin: auto;
+			display: block;
+		}
+	}
+	
+	div#tele {
+		background: #000;
+		color: #FFF;
+		text-align: center;
+		font-size: 2em;
+		font-family: $fjalla;
+		padding: .25em;
+		margin: .5em 0;
+	}
+	div#socials {
+		a {
+			display: inline-block;
+			transform: rotate(-30deg);
+			color: #FFF;
+			font-size: 1.75rem;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			margin: 0 .5em;
+			transition: all 100ms ease;
+			box-shadow: 0 0 0px 0px #FFF;
+			
+			@include breakpoint(medium only) {
+				margin: 0 .4em;
+				font-size: 1.4rem;
+				width: 30px;
+				height: 30px;
+			}
+			
+			&:hover, &:active {
+				transform: rotate(390deg) scale(1.2);
+				background-color: $light-purple !important;
+				box-shadow: 0 0 15px 0px #FFF;
+			}
+			
+			&.facebook {
+				background-color: $facebook;
+			}
+			
+			&.linkedin {
+				background-color: $linkedin;
+			}
+			
+			&.email {
+				background-color: $email;				
+			}
+		}
+	}
+	
+	form.wpcf7-form {
+		label {
+			font-size: 1.5rem;
+			color: #FFF;
+			margin-top: 1em;
+		}
+		
+		textarea {
+			height: 7em;
+		}
+		
+		input[type='text'], input[type='email'] {
+			width: 300px;
+		}
+		
+		input[type='submit'] {
+			background-color: $email;
+			color: $grey;
+			text-align: center;
+			padding: .5em 1em;
+			font-family: $fjalla;
+			display: inline-block;
+			float: right;
+			border: 0;
+			font-size: 1.75rem;
+			text-transform: uppercase;
+		}
+	}
+}
